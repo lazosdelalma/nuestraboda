@@ -1,1 +1,336 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Boda Mariana y Adrian</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'DejaVu Serif', serif;
+color:#5C5148;
+text-align:center;
+
+background-image:url("fondo.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat;
+}
+
+.portada{
+height:100vh;
+background:url("foto1.jpg") center/cover no-repeat;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+padding:20px;
+}
+
+.nombres{
+font-family:'Parisienne', cursive;
+font-size:72px;
+letter-spacing:2px;
+}
+
+.fecha{
+font-size:20px;
+margin-top:10px;
+}
+
+.boton{
+display:inline-block;
+margin-top:20px;
+padding:12px 26px;
+background:#1E1E1E;
+color:white;
+text-decoration:none;
+border-radius:25px;
+font-size:14px;
+cursor:pointer;
+transition:.3s;
+}
+
+.boton:hover{
+background:#3a3a3a;
+transform:scale(1.05);
+}
+
+section{
+padding:70px 20px;
+}
+
+.titulo{
+font-family:'Parisienne', cursive;
+font-size:38px;
+margin-bottom:20px;
+}
+
+.tarjeta{
+max-width:900px;
+margin:auto;
+padding:45px 30px;
+border-radius:22px;
+
+background:
+linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+repeating-linear-gradient(
+45deg,
+rgba(0,0,0,0.015),
+rgba(0,0,0,0.015) 2px,
+transparent 2px,
+transparent 6px
+);
+
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+.subtitulo{
+font-weight:bold;
+margin-top:20px;
+}
+
+.galeria{
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+gap:15px;
+padding:20px;
+}
+
+.galeria img{
+width:80%;
+max-width:400px;
+border-radius:18px;
+scroll-snap-align:center;
+flex-shrink:0;
+}
+
+.foto-romantica{
+width:100%;
+height:450px;
+background-size:cover;
+background-position:center;
+border-radius:20px;
+margin:40px auto;
+max-width:900px;
+}
+
+#contador{
+font-size:24px;
+margin-top:10px;
+}
+
+.animar{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.animar.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:600px){
+
+.nombres{font-size:48px;}
+.titulo{font-size:28px;}
+.foto-romantica{height:300px;}
+.galeria img{width:85%;}
+.tarjeta{padding:35px 22px;}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="portada">
+<div class="nombres">Mariana & Adrian</div>
+<div class="fecha">2 Julio 2027</div>
+<a class="boton" href="#musica">Ver invitación</a>
+</section>
+
+<section id="musica" class="animar">
+<div class="tarjeta">
+<div class="titulo">Nuestra Canción</div>
+<button onclick="document.getElementById('musicaBoda').play()" class="boton">
+Tocar nuestra canción
+</button>
+<audio id="musicaBoda" loop>
+<source src="cancion2.mp3" type="audio/mpeg">
+</audio>
+</div>
+</section>
+
+<section class="animar">
+<div class="tarjeta">
+<div class="titulo">Dos caminos, una historia</div>
+<p>Nuestros caminos se cruzaron y desde entonces caminamos juntos.</p>
+<p>Hoy nuestros corazones celebran el amor que nos une y queremos compartir esta felicidad con ustedes.</p>
+
+<p><strong>Con la bendición de Dios y de nuestros padres</strong></p>
+
+<p class="subtitulo">Padres de la novia</p>
+<p>Gabriel Martinez Sanchez<br>Alberto Gonzalez Trujillo</p>
+
+<p class="subtitulo">Padres del novio</p>
+<p>Daniela Martinez Rosales<br>Roberto Macias Juarez</p>
+
+
+</div>
+</section>
+
+<section class="animar">
+<div class="tarjeta">
+<div class="titulo">Nuestra Historia en Fotos</div>
+<div class="galeria">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+</div>
+</div>
+</section>
+
+<div class="foto-romantica" style="background-image:url('foto-romantica.jpg');"></div>
+
+<section class="animar">
+<div class="tarjeta">
+<div class="titulo">Ceremonia Religiosa</div>
+<p>Ante Dios prometemos caminar juntos, amarnos en cada etapa de la vida y cuidar el regalo de habernos encontrado.</p>
+<p>2 junio, 6:00 pm<br>san francisco de asis</p>
+<a class="boton" href="https://maps.app.goo.gl/cvPDZbtJzwzNC5h9" target="_blank">Ver ubicación</a>
+</div>
+</section>
+
+<section class="animar">
+<div class="tarjeta">
+<div class="titulo">Recepción</div>
+<p>Después de la ceremonia, los esperamos para celebrar juntos, compartir alegría y bailar toda la noche.</p>
+<p>8:00 pm en salón Amapolas.</p>
+<a class="boton" href="https://maps.app.goo.gl/4tMxNZ8hAWe6YLW7" target="_blank">Ver ubicación</a>
+</div>
+</section>
+
+<section class="animar">
+<div class="tarjeta">
+<div class="titulo">Faltan</div>
+<div id="contador"></div>
+</div>
+</section>
+
+<section class="animar">
+<div class="tarjeta">
+<div class="titulo">Código de Vestimenta</div>
+<p>Formal</p>
+<p>Elegante</p>
+</div>
+</section>
+
+<section class="animar">
+<div class="tarjeta">
+<div class="titulo">Sugerencia de Regalo</div>
+<p>Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle lo agradeceremos</p>
+</div>
+</section>
+
+<section class="animar">
+<div class="tarjeta">
+<div class="titulo">Confirma tu asistencia</div>
+
+<p>PPor favor confirma tu asistencia.</p>
+
+<div style="margin-top:20px;">
+<p class="subtitulo">Confirmar con Mariana</p>
+<a class="boton" href="https://wa.me/52181291000?text=Confirmo%20mi%20asistencia%20a%20su%20boda">WhatsApp Mariana</a>
+
+<p class="subtitulo">Confirmar con Adrian</p>
+<a class="boton" href="https://wa.me/52181263165?text=Confirmo%20mi%20asistencia%20a%20su%20boda">WhatsApp Adrian</a>
+</div>
+
+<p style="margin-top:25px;">
+
+Te agradeceremos confirmar tu asistencia para preparar cada detalle con mucho cariño.
+</p>
+
+</div>
+</section>
+
+<!-- CIERRE FINAL -->
+
+<section class="animar">
+
+<div class="tarjeta">
+
+<p style="font-size:18px;">
+Gracias por ser parte de esta historia
+</p>
+
+<p style="font-family:'Parisienne';font-size:42px; margin-top:20px;">
+Con amor
+</p>
+
+<p style="font-family:'Parisienne';font-size:52px;">
+Mariana & Adrian
+</p>
+
+</div>
+
+</section>
+
+<script>
+
+const fechaBoda = new Date(2026, 9, 17, 17, 0, 0).getTime();
+
+const contador = setInterval(function(){
+const ahora = new Date().getTime();
+const distancia = fechaBoda - ahora;
+
+if (distancia < 0) {
+clearInterval(contador);
+document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
+return;
+}
+
+const dias = Math.floor(distancia / (1000*60*60*24));
+const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
+const segundos = Math.floor((distancia%(1000*60))/1000);
+
+document.getElementById("contador").innerHTML =
+dias+" días "+horas+" horas "+minutos+" min "+segundos+" seg";
+
+},1000);
+
+const elementos = document.querySelectorAll('.animar');
+
+function mostrar(){
+const altura = window.innerHeight;
+elementos.forEach(el=>{
+const distancia = el.getBoundingClientRect().top;
+if(distancia < altura-100){
+el.classList.add("visible");
+}
+});
+}
+
+window.addEventListener("scroll",mostrar);
+mostrar();
+
+</script>
+
+</body>
+</html>

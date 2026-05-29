@@ -153,6 +153,73 @@ transform:translateY(0);
 .tarjeta{padding:35px 22px;}
 
 }
+  /* ===== MODAL VESTIMENTA ===== */
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.7);
+backdrop-filter: blur(10px);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.modal-contenido{
+background:rgba(255,255,255,0.97);
+padding:40px;
+border-radius:24px;
+max-width:950px;
+width:92%;
+text-align:center;
+position:relative;
+box-shadow:0 30px 80px rgba(0,0,0,0.35);
+}
+
+.cerrar{
+position:absolute;
+top:10px;
+right:15px;
+font-size:30px;
+cursor:pointer;
+color:#444;
+}
+
+.carrusel{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+}
+
+.carrusel-track{
+display:flex;
+width:440px;
+overflow:hidden;
+border-radius:20px;
+transition:transform .5s ease;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.carrusel-track img{
+width:440px;
+height:300px;
+object-fit:cover;
+flex-shrink:0;
+border-radius:20px;
+}
+
+.flecha{
+background:rgba(0,0,0,0.55);
+color:white;
+border:none;
+font-size:22px;
+padding:12px 16px;
+border-radius:50%;
+cursor:pointer;
+}
 
 </style>
 
@@ -243,8 +310,41 @@ Tocar nuestra canción
 <p>Formal</p>
 <p>Elegante y listo para bailar toda la noche.
 ¡¡Sombreros y botas bienvenidos para quienes disfrutan el estilo vaquero!!</p>
+  <button class="boton" onclick="abrirVestimenta()">
+Ver ideas de vestimenta
+</button>
 </div>
 </section>
+  <!-- MODAL VESTIMENTA -->
+<div id="modalVestimenta" class="modal">
+  <div class="modal-contenido">
+
+    <span class="cerrar" onclick="cerrarVestimenta()">&times;</span>
+
+    <h2>Código de Vestimenta</h2>
+    <p>Inspiración para tu outfit</p>
+
+    <div class="carrusel">
+
+      <button class="flecha" onclick="moverCarrusel(-1)">&#10094;</button>
+
+      <div class="carrusel-track" id="trackVestimenta">
+
+        <img src="vestido1.jpg">
+        <img src="vestido2.jpg">
+        <img src="vestido3.jpg">
+        <img src="traje1.jpg">
+        <img src="traje2.jpg">
+        <img src="vaquero1.jpg">
+
+      </div>
+
+      <button class="flecha" onclick="moverCarrusel(1)">&#10095;</button>
+
+    </div>
+
+  </div>
+</div>
 
 <section class="animar">
 <div class="tarjeta">
@@ -338,6 +438,33 @@ el.classList.add("visible");
 
 window.addEventListener("scroll",mostrar);
 mostrar();
+
+  function abrirVestimenta(){
+document.getElementById("modalVestimenta").style.display="flex";
+}
+
+function cerrarVestimenta(){
+document.getElementById("modalVestimenta").style.display="none";
+}
+
+window.addEventListener("click",function(e){
+const modal=document.getElementById("modalVestimenta");
+if(e.target===modal) modal.style.display="none";
+});
+
+let i=0;
+
+function moverCarrusel(dir){
+const track=document.getElementById("trackVestimenta");
+const total=track.children.length;
+
+i+=dir;
+
+if(i<0)i=total-1;
+if(i>=total)i=0;
+
+track.style.transform=`translateX(-${i*440}px)`;
+}
 
 </script>
 
